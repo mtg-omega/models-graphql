@@ -1,0 +1,9 @@
+{
+  "database": {
+    "logging": false
+  },
+
+  "log": {
+    "level": "error"
+  }
+}

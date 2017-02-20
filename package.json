@@ -1,0 +1,50 @@
+{
+  "name": "mtg-omega-models",
+  "version": "0.0.1",
+  "description": "Models for the MtG Omega Project",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint .",
+    "check": "npm run eslint",
+    "pretest": "npm run check",
+    "test": "node --harmony node_modules/jest/bin/jest.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtg-omega/models.git"
+  },
+  "keywords": [
+    "models",
+    "sequelize",
+    "orm"
+  ],
+  "author": "Niccolò Olivieri <niccolo@olivieriachille.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtg-omega/models/issues"
+  },
+  "homepage": "https://github.com/mtg-omega/models#readme",
+  "dependencies": {
+    "config": "^1.24.0",
+    "graphql": "^0.9.0",
+    "graphql-custom-types": "^0.7.1",
+    "hotvenue-utils": "git+https://github.com/hotvenue/utils.git",
+    "sequelize": "^3.28.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^18.0.0",
+    "babel-preset-airbnb": "^2.1.1",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "jest": "^18.1.0",
+    "sqlite3": "^3.1.8"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/(?!hotvenue-*)"
+    ]
+  }
+}

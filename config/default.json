@@ -1,0 +1,17 @@
+{
+  "database": {
+    "dialect": "sqlite",
+    "logging": true
+  },
+
+  "log": {
+    "level": "info"
+  },
+
+  "crypto": {
+    "hashBytes": 32,
+    "saltBytes": 16,
+    "iterations": 878265,
+    "algorithm": "sha512"
+  }
+}
