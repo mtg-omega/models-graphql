@@ -4,9 +4,9 @@ import {
   GraphQLString,
   GraphQLNonNull,
 } from 'graphql';
+import { Edition as EditionSql, EditionI18N, SingleI18N } from 'mtg-omega-models-sql';
 
 import { Single } from './single';
-import { Edition as EditionSql, EditionI18N, SingleI18N } from '../sql';
 
 export const Edition = new GraphQLObjectType({
   name: 'edition',

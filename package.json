@@ -2,7 +2,7 @@
   "name": "mtg-omega-models",
   "version": "0.0.1",
   "description": "Models for the MtG Omega Project",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "eslint": "eslint .",
     "check": "npm run eslint",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mtg-omega/models.git"
+    "url": "git+https://github.com/mtg-omega/models-graphql.git"
   },
   "keywords": [
     "models",
@@ -21,14 +21,14 @@
   "author": "Niccolò Olivieri <niccolo@olivieriachille.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mtg-omega/models/issues"
+    "url": "https://github.com/mtg-omega/models-graphql/issues"
   },
-  "homepage": "https://github.com/mtg-omega/models#readme",
+  "homepage": "https://github.com/mtg-omega/models-graphql#readme",
   "dependencies": {
     "config": "^1.24.0",
     "graphql": "^0.9.0",
     "graphql-custom-types": "^0.7.1",
-    "hotvenue-utils": "git+https://github.com/hotvenue/utils.git",
+    "mtg-omega-models-sql": "^1.0.3",
     "sequelize": "^3.28.0"
   },
   "devDependencies": {
@@ -41,10 +41,5 @@
     "eslint-plugin-react": "^6.8.0",
     "jest": "^18.1.0",
     "sqlite3": "^3.1.8"
-  },
-  "jest": {
-    "transformIgnorePatterns": [
-      "/node_modules/(?!hotvenue-*)"
-    ]
   }
 }

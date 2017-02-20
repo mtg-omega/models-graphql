@@ -1,7 +1,7 @@
 import { graphql } from 'graphql';
+import { sequelize, Edition, EditionI18N, Single, SingleI18N } from 'mtg-omega-models-sql';
 
 import Schema from '../../graphql';
-import { sequelize, Edition, EditionI18N, Single, SingleI18N } from '../../sql';
 
 describe('GraphQL', () => {
   describe('Edition', () => {
