@@ -1,4 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
+### ES6
+lib
+
 ### Config
 config/local*
 
