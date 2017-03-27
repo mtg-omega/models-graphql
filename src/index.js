@@ -31,7 +31,7 @@ export function handler(event, context, done) {
 
   // patch to allow queries from GraphiQL
   // like the initial introspectionQuery
-  if (event.query && event.query.hasOwnProperty('query')) {
+  if (event.query && Object.prototype.hasOwnProperty.call(event.query, 'query')) {
     query = event.query.query.replace('\n', ' ', 'g');
   }
 
