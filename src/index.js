@@ -47,6 +47,8 @@ export function handler(event, context, done) {
       log.info('Finished successfully');
 
       done(null, createResponse(200, result));
+
+      log.debug('after done');
     })
     .catch((error) => {
       log.error('Finished with errors');
