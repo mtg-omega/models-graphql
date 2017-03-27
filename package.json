@@ -8,7 +8,7 @@
     "check": "npm run eslint",
     "pretest": "npm run check",
     "test": "node --harmony node_modules/jest/bin/jest.js",
-    "transpile": "babel --presets es2015 src --out-dir dist",
+    "transpile": "babel --presets es2015 src --out-dir dist --plugins syntax-async-functions,transform-regenerator",
     "prepublish": "npm run transpile"
   },
   "repository": {
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/mtg-omega/models-graphql#readme",
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "config": "^1.24.0",
     "graphql": "^0.9.0",
     "graphql-custom-types": "^0.7.1",

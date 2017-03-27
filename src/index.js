@@ -1,6 +1,10 @@
+require('babel-polyfill');
+
+/* eslint-disable import/first */
 import fs from 'fs';
 import { graphql, GraphQLObjectType, GraphQLSchema } from 'graphql';
 import { log } from 'zweer-utils';
+/* eslint-enable import/first */
 
 const queryFields = {};
 
@@ -37,21 +41,21 @@ function createResponse(statusCode, body) {
   };
 }
 
-export function handler(event, context, done) {
+export async function handler(event, context, done) {
   log.debug(event);
 
   const body = JSON.parse(event.body);
 
-  return graphql(Schema, body.query)
-    .then((result) => {
-      log.info('Finished successfully');
+  try {
+    const result = await graphql(Schema, body.query);
 
-      return done(null, createResponse(200, result));
-    })
-    .catch((error) => {
-      log.error('Finished with errors');
-      log.debug(error);
+    log.info('Finished successfully');
 
-      return done(null, createResponse(error.responseStatusCode || 500, { message: error.message || 'Internal server error' }));
-    });
+    done(null, createResponse(200, result));
+  } catch (err) {
+    log.error('Finished with errors');
+    log.debug(err);
+
+    done(null, createResponse(err.responseStatusCode || 500, { message: err.message || 'Internal server error' }));
+  }
 }
