@@ -8,7 +8,7 @@
     "check": "npm run eslint",
     "pretest": "npm run check",
     "test": "node --harmony node_modules/jest/bin/jest.js",
-    "transpile": "babel --presets es2015 src --out-dir lib",
+    "transpile": "babel --presets es2015 src --out-dir dist",
     "prepublish": "npm run transpile"
   },
   "repository": {
