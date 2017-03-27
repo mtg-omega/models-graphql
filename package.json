@@ -31,7 +31,7 @@
     "graphql": "^0.9.0",
     "graphql-custom-types": "^0.7.1",
     "mtg-omega-models-sql": "^1.0.4",
-    "sequelize": "^3.28.0",
+    "mysql": "^2.13.0",
     "zweer-utils": "^0.0.2"
   },
   "devDependencies": {
