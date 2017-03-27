@@ -1,6 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### ES6
-lib
+dist
 
 ### Config
 config/local*
