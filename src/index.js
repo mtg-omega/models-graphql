@@ -46,14 +46,12 @@ export function handler(event, context, done) {
     .then((result) => {
       log.info('Finished successfully');
 
-      done(null, createResponse(200, result));
-
-      log.debug('after done');
+      return done(null, createResponse(200, result));
     })
     .catch((error) => {
       log.error('Finished with errors');
       log.debug(error);
 
-      done(null, createResponse(error.responseStatusCode || 500, { message: error.message || 'Internal server error' }));
+      return done(null, createResponse(error.responseStatusCode || 500, { message: error.message || 'Internal server error' }));
     });
 }
