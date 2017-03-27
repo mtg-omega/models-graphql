@@ -383,6 +383,10 @@ babel-plugin-jest-hoist@^18.0.0:
   version "18.0.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-18.0.0.tgz#4150e70ecab560e6e7344adc849498072d34e12a"
 
+babel-plugin-syntax-async-functions@^6.13.0:
+  version "6.13.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.13.0.tgz#cad9cad1191b5ad634bf30ae0872391e0647be95"
+
 babel-plugin-syntax-exponentiation-operator@^6.8.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-exponentiation-operator/-/babel-plugin-syntax-exponentiation-operator-6.13.0.tgz#9ee7e8337290da95288201a6a57f4170317830de"
@@ -2568,13 +2572,13 @@ ms@0.7.2:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.2.tgz#ae25cf2512b3885a1d95d7f037868d8431124765"
 
-mtg-omega-models-sql@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/mtg-omega-models-sql/-/mtg-omega-models-sql-1.0.3.tgz#5b53787656ccc67a3c831f6abb918833e7002f5e"
+mtg-omega-models-sql@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/mtg-omega-models-sql/-/mtg-omega-models-sql-1.0.4.tgz#68e83cf15b9a4cdf9e9ee40e8855adfd5cc095d5"
   dependencies:
     config "^1.24.0"
     sequelize "^3.28.0"
-    zweer-utils "^0.0.1"
+    zweer-utils "^0.0.2"
 
 mute-stream@0.0.5:
   version "0.0.5"
@@ -3618,9 +3622,9 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-zweer-utils@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/zweer-utils/-/zweer-utils-0.0.1.tgz#20fd885ba5c997959340aece88664798575834f7"
+zweer-utils@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/zweer-utils/-/zweer-utils-0.0.2.tgz#a00b1ce718efa9900b7d3cfd6c614a24538dd351"
   dependencies:
     config "^1.25.1"
     moment "^2.17.1"
