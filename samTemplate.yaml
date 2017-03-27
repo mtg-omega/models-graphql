@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Description: GraphQL entry point
+
+Resources:
+  MtgOmegaBatchFeedImport:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: MtgOmega-GraphQL-API
+      Description: GraphQL entry point
+      Timeout: 30
+      Handler: dist/index.handler
+      Runtime: nodejs4.3
+      CodeUri: ./
+      Role: arn:aws:iam::390360040979:role/lambda-batch
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-4a08f833
+        SubnetIds:
+          - subnet-1ee0ff68
+          - subnet-b96932e1
+          - subnet-4fb0af2b
+      Environment:
+        Variables:
+          NODE_ENV: production
+      Events:
+        GraphQLResource:
+          Type: Api
+          Properties:
+            Path: /graphql
+            Method: post
