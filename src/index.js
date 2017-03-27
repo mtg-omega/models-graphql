@@ -25,6 +25,9 @@ const Schema = new GraphQLSchema({
 export default Schema;
 
 function createResponse(statusCode, body) {
+  log.debug(`statusCode: ${statusCode}`);
+  log.debug(body);
+
   return {
     statusCode,
     headers: {
@@ -39,7 +42,7 @@ export function handler(event, context, done) {
 
   const body = JSON.parse(event.body);
 
-  graphql(Schema, body.query)
+  return graphql(Schema, body.query)
     .then(result => done(null, createResponse(200, result)))
     .catch(error => done(null, createResponse(error.responseStatusCode || 500, { message: error.message || 'Internal server error' })));
 }
