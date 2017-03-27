@@ -1,6 +1,6 @@
 {
   "name": "mtg-omega-models",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Models for the MtG Omega Project",
   "main": "dist/index.js",
   "scripts": {
