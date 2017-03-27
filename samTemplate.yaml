@@ -25,7 +25,12 @@ Resources:
         Variables:
           NODE_ENV: production
       Events:
-        GraphQLResource:
+        GraphQLResourceGET:
+          Type: Api
+          Properties:
+            Path: /graphql
+            Method: get
+        GraphQLResourcePOST:
           Type: Api
           Properties:
             Path: /graphql

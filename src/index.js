@@ -24,29 +24,22 @@ const Schema = new GraphQLSchema({
 
 export default Schema;
 
+function createResponse(statusCode, body) {
+  return {
+    statusCode,
+    headers: {
+      'Access-Control-Allow-Origin': '*', // Required for CORS
+    },
+    body: JSON.stringify(body),
+  };
+}
+
 export function handler(event, context, done) {
   log.debug(event);
 
-  let query = event.query;
+  const body = JSON.parse(event.body);
 
-  // patch to allow queries from GraphiQL
-  // like the initial introspectionQuery
-  if (event.query && Object.prototype.hasOwnProperty.call(event.query, 'query')) {
-    query = event.query.query;
-  }
-
-  query = query.replace('\n', ' ', 'g');
-
-  graphql(Schema, query)
-    .then((result) => {
-      if (result.errors) {
-        log.error('Error while executing the graphql query');
-        log.info(result.errors);
-
-        done(result.errors);
-        return;
-      }
-
-      done(null, result.data);
-    });
+  graphql(Schema, body.query)
+    .then(result => done(null, createResponse(200, result)))
+    .catch(error => done(null, createResponse(error.responseStatusCode || 500, { message: error.message || 'Internal server error' })));
 }
