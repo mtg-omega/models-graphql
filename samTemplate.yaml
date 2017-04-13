@@ -7,8 +7,8 @@ Resources:
   MtgOmegaBatchFeedImport:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: MtgOmega-GraphQL-API
-      Description: GraphQL entry point
+      FunctionName: MtgOmega-GraphQL-MySQL-API
+      Description: GraphQL entry point for the MySQL models
       Timeout: 30
       Handler: dist/index.handler
       Runtime: nodejs4.3
@@ -28,10 +28,10 @@ Resources:
         GraphQLResourceGET:
           Type: Api
           Properties:
-            Path: /graphql
+            Path: /graphql-sql
             Method: get
         GraphQLResourcePOST:
           Type: Api
           Properties:
-            Path: /graphql
+            Path: /graphql-sql
             Method: post
